@@ -104,6 +104,7 @@ int main() {
 //    insert.selectionSort(array , 7);
 //    insert.bubbleSort(array , 7);
 //    insert.countSort(array, 7);
+    insert.printArray(array , 7);
 
     return 0;
 }
