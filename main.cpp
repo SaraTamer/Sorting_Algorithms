@@ -19,7 +19,9 @@ namespace sortlib{
         void countSort(T arr[] , ll n);
         void merge(T* arr , ll l, ll m, ll r);
         void mergeSort(T* arr, ll l, ll r);
-
+        ll partitioning(T* arr, ll l , ll r);
+        void quickSort(T* arr, ll l , ll r);
+//        void shellSort();
         void printArray(T* arr , ll n);
     };
 
@@ -167,6 +169,43 @@ namespace sortlib{
 
     }
     template <class T>
+    ll SortingAlgorithms<T>::partitioning(T* arr , ll l, ll r)
+    {
+        ll i = l + 1;
+        ll j = l + 1;
+        ll pivot = l;
+        while(j <= r)
+        {
+            if(arr[j] < arr[pivot])
+            {
+                swap(arr[j] , arr[i]);
+                if(i <= r)
+                    i++;
+            }
+            j++;
+        }
+        if(pivot != i - 1) {
+            swap(arr[pivot] , arr[i-1]);
+            pivot = i ;
+            return pivot;
+        }
+        else
+        {
+            return pivot + 1;
+        }
+    }
+    template <class T>
+    void SortingAlgorithms<T>::quickSort(T *arr, ll l, ll r)
+    {
+        if(l >= r)
+        {
+            return;
+        }
+        ll pivot = partitioning(arr , l , r);
+        quickSort(arr , l , pivot - 1);
+        quickSort(arr , pivot, r);
+    }
+    template <class T>
     void SortingAlgorithms<T>::printArray(T* arr , ll n)
     {
         for(ll i = 0 ; i < n; i++)
@@ -178,14 +217,15 @@ namespace sortlib{
 }
 
 int main() {
-    sortlib::SortingAlgorithms<int> insert;
-    int array[7] = {4,3,1,8,5,7,2};
-//    insert.insertionSort(array , 7);
-//    insert.selectionSort(array , 7);
-//    insert.bubbleSort(array , 7);
-//    insert.countSort(array, 7);
-//    insert.mergeSort(array , 0 , 6);
-    insert.printArray(array , 7);
+    sortlib::SortingAlgorithms<int> test;
+    int array[7] = {4,8,6,3,5,1,7};
+//    test.insertionSort(array , 7);
+//    test.selectionSort(array , 7);
+//    test.bubbleSort(array , 7);
+//    test.countSort(array, 7);
+//    test.mergeSort(array , 0 , 6);
+    test.quickSort(array , 0 , 6);
+    test.printArray(array , 7);
 
     return 0;
 }
