@@ -1,4 +1,10 @@
-
+/*
+ * FCAI - Data Structure
+ * Author: Sara Tamer Mohamed Bihery - 20210155
+ * Program: Sorting Algorithms
+ * Date: 19/3/2023
+ *
+ */
 #ifndef SORTING_ALGORITHMS_ALGORITHMS_H
 #define SORTING_ALGORITHMS_ALGORITHMS_H
 
