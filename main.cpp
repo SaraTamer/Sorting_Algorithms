@@ -45,6 +45,7 @@ namespace sortlib {
     };
 
 }
+using namespace sortlib;
 
 
 template <class T>
@@ -255,7 +256,6 @@ void SortingAlgorithms<T>::printArray(T* arr , ll n)
     cout << '\n';
 }
 
-using namespace sortlib;
 
 int main() {
     SortingAlgorithms<int> test;
