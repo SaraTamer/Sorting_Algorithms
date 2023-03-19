@@ -79,8 +79,9 @@ void SortingAlgorithms<T>::selectionSort(T* arr , ll n)
             if(arr[i] > arr[j])
             {
                 mnm = j;
+                swap(arr[i] , arr[mnm]);
             }
-            swap(arr[i] , arr[mnm]);
+            
         }
     }
 }
