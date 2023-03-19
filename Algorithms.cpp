@@ -43,8 +43,8 @@ void SortingAlgorithms<T>::selectionSort(T* arr , ll n)
             if(arr[i] > arr[j])
             {
                 mnm = j;
+                swap(arr[i] , arr[mnm]);
             }
-            swap(arr[i] , arr[mnm]);
         }
     }
 }
@@ -54,7 +54,7 @@ void SortingAlgorithms<T>::bubbleSort(T arr[] , ll n)
     bool flag = false;
     for(ll i = 0 ; i < n; i++)
     {
-        for(ll j = 0; j < n - i; j++)
+        for(ll j = 0; j < n - i - 1; j++)
         {
             if(arr[j] > arr[j+1])
             {
