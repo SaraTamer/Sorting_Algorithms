@@ -99,6 +99,7 @@ void SortingAlgorithms<T>::merge(T* arr , ll l, ll m, ll r)
 
     T* leftSub = new T[sz1];
     T* rightSub = new T[sz2];
+
     for(ll i = 0; i < sz1; i++)
     {
         leftSub[i] = arr[l + i];
@@ -138,8 +139,6 @@ void SortingAlgorithms<T>::merge(T* arr , ll l, ll m, ll r)
         sz2--;
         k++;
     }
-//        delete[] leftSub;
-//        delete[] rightSub;
 }
 template <class T>
 void SortingAlgorithms<T>:: mergeSort(T* arr, ll l, ll r)
