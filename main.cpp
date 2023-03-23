@@ -1,6 +1,9 @@
+
 /*
  * FCAI - Data Structure
- * Author: Sara Tamer Mohamed Bihery - 20210155
+ * Author1: Sara Tamer Mohamed Bihery - 20210155
+ * Author2: Sahar Mohamed Fawzy - 20211049
+ * Author3: Mariam Khaled Mohammed - 20200776
  * Program: Sorting Algorithms
  * Date: 19/3/2023
  *
@@ -47,7 +50,6 @@ namespace sortlib {
 }
 using namespace sortlib;
 
-
 template <class T>
 void SortingAlgorithms<T>::insertionSort(T arr[] , ll n)
 {
@@ -81,7 +83,6 @@ void SortingAlgorithms<T>::selectionSort(T* arr , ll n)
                 mnm = j;
                 swap(arr[i] , arr[mnm]);
             }
-            
         }
     }
 }
@@ -91,7 +92,7 @@ void SortingAlgorithms<T>::bubbleSort(T arr[] , ll n)
     bool flag = false;
     for(ll i = 0 ; i < n; i++)
     {
-        for(ll j = 0; j < n - i; j++)
+        for(ll j = 0; j < n - i - 1; j++)
         {
             if(arr[j] > arr[j+1])
             {
@@ -136,6 +137,7 @@ void SortingAlgorithms<T>::merge(T* arr , ll l, ll m, ll r)
 
     T* leftSub = new T[sz1];
     T* rightSub = new T[sz2];
+
     for(ll i = 0; i < sz1; i++)
     {
         leftSub[i] = arr[l + i];
@@ -175,8 +177,6 @@ void SortingAlgorithms<T>::merge(T* arr , ll l, ll m, ll r)
         sz2--;
         k++;
     }
-//        delete[] leftSub;
-//        delete[] rightSub;
 }
 template <class T>
 void SortingAlgorithms<T>:: mergeSort(T* arr, ll l, ll r)
@@ -261,17 +261,17 @@ void SortingAlgorithms<T>::printArray(T* arr , ll n)
 int main() {
     SortingAlgorithms<int> test;
     int array[7] = {4,8,6,3,5,1,7};
-
-
+    
     auto start = chrono::steady_clock:: now();
-//    test.insertionSort(array , 7);
-//    test.selectionSort(array , 200);
-//    test.bubbleSort(array , 50000);
-//    test.countSort(array, 10000);
-//    test.mergeSort(array , 0 ,49999);
-//    test.quickSort(array , 0 , 49999);
-//    test.shellSort(array, 50000);
-    test.printArray(array , 7);
+    
+    test.insertionSort(array , 7);
+//    test.selectionSort(array , 7);
+//    test.bubbleSort(array , 7);
+//    test.countSort(array, 7);
+//    test.mergeSort(array , 0 ,6);
+//    test.quickSort(array , 0 , 6);
+//    test.shellSort(array, 7);
+//    test.printArray(array , 7);
 
     auto end = chrono::steady_clock:: now();
 
