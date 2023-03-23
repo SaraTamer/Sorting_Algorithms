@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <chrono>
+#include <vector>
 
 using namespace std;
 
